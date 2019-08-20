@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">AppConsumoRetrofit</string>
+    <string name="listar">Listar</string>
+    <string name="guardar">Guardar</string>
+    <string name="registrar">Registrar empleado</string>
+    <string name="nombre">Nombre</string>
+    <string name="salario">Salario</string>
+    <string name="edad">Edad</string>
+    <string name="guardarbtn">Guardar</string>
+</resources>
