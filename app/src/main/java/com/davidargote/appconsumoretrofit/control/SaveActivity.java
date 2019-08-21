@@ -1,8 +1,7 @@
-package com.davidargote.appconsumoretrofit;
+package com.davidargote.appconsumoretrofit.control;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -11,11 +10,12 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.davidargote.appconsumoretrofit.Interfaces.RestApiEmployees;
+import com.davidargote.appconsumoretrofit.R;
+import com.davidargote.appconsumoretrofit.model.AdapterListEmployees;
 import com.davidargote.appconsumoretrofit.model.PostEmployee;
 
 import retrofit2.Call;
 import retrofit2.Callback;
-import retrofit2.Converter;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -45,7 +45,10 @@ public class SaveActivity extends AppCompatActivity {
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                requesPost();
+
+                if (!editName.getText().toString().isEmpty() && editSalary.getText().toString().isEmpty()
+                    && editAge.getText().toString().isEmpty()) requesPost();
+                else editName.setError("Llene el campo nombre o los que hagan falta");
             }
         });
     }
@@ -74,6 +77,7 @@ public class SaveActivity extends AppCompatActivity {
                     Toast.makeText(SaveActivity.this, "No se insertaron los datos", Toast.LENGTH_SHORT).show();
                 }else{
                     Toast.makeText(SaveActivity.this, "Se inserto", Toast.LENGTH_SHORT).show();
+                    clear();
                 }
             }
 
@@ -82,6 +86,14 @@ public class SaveActivity extends AppCompatActivity {
                 Log.e("ErrorApi", t.getMessage());
             }
         });
+
+    }
+
+    private void clear() {
+
+        editName.setText("");
+        editSalary.setText("");
+        editAge.setText("");
 
     }
 }

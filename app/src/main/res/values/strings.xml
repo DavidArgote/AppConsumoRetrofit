@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AppConsumoRetrofit</string>
+    <string name="app_name">Consumo con retrofit</string>
     <string name="listar">Listar</string>
     <string name="guardar">Guardar</string>
     <string name="registrar">Registrar empleado</string>

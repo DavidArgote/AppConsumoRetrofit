@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SaveActivity">
+    tools:context=".control.SaveActivity">
 
     <TextView
         android:id="@+id/textView"
@@ -70,7 +70,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
-        android:background="@color/colorAccent"
+        android:background="@drawable/bg_btn"
         android:text="@string/guardarbtn"
         android:textColor="@android:color/background_light"
         android:textSize="18sp"
