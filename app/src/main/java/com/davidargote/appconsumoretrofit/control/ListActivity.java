@@ -49,17 +49,18 @@ public class ListActivity extends AppCompatActivity {
     private void getRequest(){
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://dummy.restapiexample.com/api/v1/")
+                .baseUrl("http://dummy.restapiexample.com/api/v1/") // URl base de nuestra api
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
-        RestApiEmployees restApiEmployees = retrofit.create(RestApiEmployees.class);
+        RestApiEmployees restApiEmployees = retrofit.create(RestApiEmployees.class); // Instancia de nuestra interfaz
 
-        Call<List<Employees>> call = restApiEmployees.getEmployees();
+        Call<List<Employees>> call = restApiEmployees.getEmployees(); // Llamada del metodo get
 
         call.enqueue(new Callback<List<Employees>>() {
             @Override
             public void onResponse(Call<List<Employees>> call, Response<List<Employees>> response) {
+
                 if (!response.isSuccessful()){
                     Log.e("Error", "No hay datos");
                     return;
@@ -77,9 +78,6 @@ public class ListActivity extends AppCompatActivity {
                 Log.e("Error", t.getMessage());
             }
         });
-
-
-
 
     }
 
